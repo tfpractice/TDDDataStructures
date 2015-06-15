@@ -25,26 +25,26 @@ describe "queue" do
     end
   end
 
-  describe "dequeue" do
+  describe "#dequeue" do
     it "removes the first item from :dataStore" do
     	expect{@myQueue.dequeue}.to change{@myQueue.size}.from(4).to(3)
 
     end
   end
 
-  describe "front" do
+  describe "#front" do
     it "return the value of the first element in :dataStore" do
     	expect(@myQueue.front).to eq(1)
     end
   end
 
-  describe "back" do
+  describe "#back" do
     it "returns the last object in :dataStore" do
     	expect(@myQueue.back).to eq(7)
     end
   end
 
-  describe "isEmpty" do
+  describe "#isEmpty" do
     it "reports whether or not :dataStore is empty" do
     	expect(@myQueue.isEmpty).to be_falsy
     end

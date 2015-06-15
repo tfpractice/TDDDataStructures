@@ -9,8 +9,8 @@ class LList
     currNode = @head
     while currNode.data != item
       currNode = currNode.next
-
     end
+    return currNode
   end
 
   def insert(data, predecessor)
@@ -20,6 +20,21 @@ class LList
     currNode.next=newNode
   end
 
+  def findPredecessor(item)
+    currNode = @head
+    while ((currNode.next != nil)) && (currNode.next.data != item)
+      currNode = currNode.next
+    end
+    return currNode
+  end
+
+  def remove(item)
+    prevNode = self.findPredecessor(item)
+    if prevNode.next != nil
+      prevNode.next = prevNode.next.next
+
+    end
+  end
 end
 
 
@@ -36,3 +51,8 @@ class Node
 
 
 end
+
+myNode = Node.new("lol");
+myNext = Node.new("nextNode");
+myNode.next = myNext
+puts myNode.next.data
